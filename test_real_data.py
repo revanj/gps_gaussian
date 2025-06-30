@@ -32,17 +32,51 @@ class StereoHumanRender:
         self.model.eval()
 
     def infer_seqence(self, view_select, ratio=0.5):
-        total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
+        import time
+        # total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
+        total_frames = 10
+        # split the for loop into parts
+        data_list = []
+
+        data_fetch_start = time.time_ns()
         for idx in tqdm(range(total_frames)):
             item = self.dataset.get_test_item(idx, source_id=view_select)
             data = self.fetch_data(item)
-            data = get_novel_calib(data, self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
-            with torch.no_grad():
-                data, _, _ = self.model(data, is_train=False)
-                data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
+            data_list.append(data)
+        data_fetch_end = time.time_ns()
+        print('data fetch time:', (data_fetch_end - data_fetch_start) / 10**6)
+        print('average time:', ((data_fetch_end - data_fetch_start)/total_frames) / 10**6)
 
-            render_novel = self.tensor2np(data['novel_view']['img_pred'])
-            cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
+        novel_calib_start = time.time_ns()
+        for idx in tqdm(range(total_frames)):
+            data_list[idx] = get_novel_calib(data_list[idx], self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
+        novel_calib_end = time.time_ns()
+        print('novel calib time:', (novel_calib_end - novel_calib_start) / 10**6)
+        print('average time:', (novel_calib_end - novel_calib_start)/total_frames / 10**6)
+
+        with torch.no_grad():
+            model_start = time.time_ns()
+            for idx in tqdm(range(total_frames)):
+                data_list[idx], _, _ = self.model(data_list[idx], is_train=False)
+            model_end = time.time_ns()
+            print('model time:', (model_end - model_start) / 10**6)
+            print('average time:', (model_end - model_start)/total_frames / 10**6)
+
+            render_start = time.time_ns()
+            for idx in tqdm(range(total_frames)):
+                data_list[idx] = pts2render(data_list[idx], bg_color=self.cfg.dataset.bg_color)
+            render_end = time.time_ns()
+            print('render time:', (render_end - render_start) / 10**6)
+            print('average time:', (render_end - render_start)/total_frames / 10**6)
+
+        to_np_start = time.time_ns()
+        for idx in tqdm(range(total_frames)):
+            render_novel = self.tensor2np(data_list[idx]['novel_view']['img_pred'])
+        to_np_end = time.time_ns()
+        print('to np start time:', (to_np_end - to_np_start) / 10**6)
+        print('average time:', (to_np_end - to_np_start)/total_frames / 10**6)
+
+        # cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
