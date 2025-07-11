@@ -7,6 +7,7 @@ from lib.gs_parm_network import GSRegresser
 from lib.loss import sequence_loss
 from lib.utils import flow2depth, depth2pc
 from torch.cuda.amp import autocast as autocast
+import time
 
 
 class RtStereoHumanModel(nn.Module):
@@ -23,6 +24,7 @@ class RtStereoHumanModel(nn.Module):
             self.gs_parm_regresser = GSRegresser(self.cfg, rgb_dim=3, depth_dim=1)
 
     def forward(self, data, is_train=True):
+        import time
         bs = data['lmain']['img'].shape[0]
 
         image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
@@ -49,22 +51,36 @@ class RtStereoHumanModel(nn.Module):
             return data, flow_loss, metrics
 
         else:
+            flow_start = time.time_ns()
             flow_up = self.raft_stereo(img_feat[2], iters=self.val_iters, test_mode=True)
             flow_loss, metrics = None, None
+            flow_end = time.time_ns()
 
+            print("flow generation time:", (flow_end - flow_start) * 10**(-6))
             data['lmain']['flow_pred'] = flow_up[0]
             data['rmain']['flow_pred'] = flow_up[1]
 
             if not self.with_gs_render:
                 return data, flow_loss, metrics
+            flow2gs_start = time.time_ns()
             data = self.flow2gsparms(image, img_feat, data, bs)
+            flow2gs_end = time.time_ns()
+            print("flow to gs network time", (flow2gs_end - flow2gs_start) * 10**(-6))
 
             return data, flow_loss, metrics
 
     def flow2gsparms(self, lr_img, lr_img_feat, data, bs):
         for view in ['lmain', 'rmain']:
+            flow_to_depth_start = time.time_ns()
             data[view]['depth'] = flow2depth(data[view])
+            flow_to_depth_end = time.time_ns()
+            print("flow to depth time:", (flow_to_depth_end - flow_to_depth_start) * 10**(-6))
+
+            depth_to_pc_time_start = time.time_ns()
             data[view]['xyz'] = depth2pc(data[view]['depth'], data[view]['extr'], data[view]['intr']).view(bs, -1, 3)
+            depth_to_pc_time_end = time.time_ns()
+            print("depth to pc time:", (depth_to_pc_time_end - depth_to_pc_time_start) * 10**(-6))
+
             valid = data[view]['depth'] != 0.0
             data[view]['pts_valid'] = valid.view(bs, -1)
 
