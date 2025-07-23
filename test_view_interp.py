@@ -41,7 +41,10 @@ class StereoHumanRender:
         # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         # for idx in tqdm(range(total_samples)):
         #     item = self.dataset.get_test_item(idx, source_id=view_select)
-        for _ in range(20):
+        total_frames = 20
+        sum_ssim = 0
+        sum_l1 = 0
+        for _ in range(total_frames):
             data = self.fetch_data(phase='train')
             #  Raft Stereo + GS Regresser
             data, _, _ = self.model(data, is_train=False)
@@ -51,12 +54,20 @@ class StereoHumanRender:
             render_novel = data['novel_view']['img_pred']
             gt_novel = data['novel_view']['img'].cuda()
 
-            print(render_novel.shape, gt_novel.shape)
-
             Ll1 = l1_loss(render_novel, gt_novel)
             Lssim = 1.0 - ssim(render_novel, gt_novel)
 
             print("l1 loss is", Ll1, "ssim loss is", Lssim)
+            sum_ssim += Lssim
+            sum_l1 += Ll1
+        sum_ssim /= total_frames
+        sum_l1 /= total_frames
+
+        print("avg ssim loss is ", sum_ssim)
+        print("avg l1 loss is ", sum_l1)
+
+
+
 
         # loss = 1.0 * flow_loss + 0.8 * Ll1 + 0.2 * Lssim
         # for i in range(novel_view_nums):
