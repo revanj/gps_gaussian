@@ -41,7 +41,7 @@ class StereoHumanRender:
         # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         # for idx in tqdm(range(total_samples)):
         #     item = self.dataset.get_test_item(idx, source_id=view_select)
-        for _ in range(20):
+        for i in range(20):
             data = self.fetch_data(phase='train')
             #  Raft Stereo + GS Regresser
             data, _, _ = self.model(data, is_train=False)
@@ -55,7 +55,7 @@ class StereoHumanRender:
             Lssim = 1.0 - ssim(render_novel, gt_novel)
 
             render_novel = self.tensor2np(render_novel)
-            cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg', render_novel)
+            cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg' % (data['name'], str(i).zfill(2)), render_novel)
 
             print("l1 loss is", Ll1, "ssim loss is", Lssim)
 
