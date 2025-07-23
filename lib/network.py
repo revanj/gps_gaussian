@@ -74,12 +74,12 @@ class RtStereoHumanModel(nn.Module):
             flow_to_depth_start = time.time_ns()
             data[view]['depth'] = flow2depth(data[view])
             flow_to_depth_end = time.time_ns()
-            print("flow to depth time:", (flow_to_depth_end - flow_to_depth_start) * 10**(-6))
+            # print("flow to depth time:", (flow_to_depth_end - flow_to_depth_start) * 10**(-6))
 
             depth_to_pc_time_start = time.time_ns()
             data[view]['xyz'] = depth2pc(data[view]['depth'], data[view]['extr'], data[view]['intr']).view(bs, -1, 3)
             depth_to_pc_time_end = time.time_ns()
-            print("depth to pc time:", (depth_to_pc_time_end - depth_to_pc_time_start) * 10**(-6))
+            # print("depth to pc time:", (depth_to_pc_time_end - depth_to_pc_time_start) * 10**(-6))
 
             valid = data[view]['depth'] != 0.0
             data[view]['pts_valid'] = valid.view(bs, -1)

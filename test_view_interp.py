@@ -41,7 +41,7 @@ class StereoHumanRender:
         # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         # for idx in tqdm(range(total_samples)):
         #     item = self.dataset.get_test_item(idx, source_id=view_select)
-        for _ in range(200):
+        for _ in range(20):
             data = self.fetch_data(phase='train')
             #  Raft Stereo + GS Regresser
             data, _, _ = self.model(data, is_train=False)
