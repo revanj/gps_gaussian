@@ -56,7 +56,7 @@ class RtStereoHumanModel(nn.Module):
             flow_loss, metrics = None, None
             flow_end = time.time_ns()
 
-            print("flow generation time:", (flow_end - flow_start) * 10**(-6))
+            # print("flow generation time:", (flow_end - flow_start) * 10**(-6))
             data['lmain']['flow_pred'] = flow_up[0]
             data['rmain']['flow_pred'] = flow_up[1]
 
@@ -65,7 +65,7 @@ class RtStereoHumanModel(nn.Module):
             flow2gs_start = time.time_ns()
             data = self.flow2gsparms(image, img_feat, data, bs)
             flow2gs_end = time.time_ns()
-            print("flow to gs network time", (flow2gs_end - flow2gs_start) * 10**(-6))
+            # print("flow to gs network time", (flow2gs_end - flow2gs_start) * 10**(-6))
 
             return data, flow_loss, metrics
 
