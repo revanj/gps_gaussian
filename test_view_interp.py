@@ -9,6 +9,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 from lib.human_loader import StereoHumanDataset
+from lib.loss import l1_loss, ssim
 from lib.network import RtStereoHumanModel
 from config.stereo_human_config import ConfigStereoHuman as config
 from lib.utils import get_novel_calib
@@ -36,15 +37,29 @@ class StereoHumanRender:
         for idx in tqdm(range(total_samples)):
             item = self.dataset.get_test_item(idx, source_id=view_select)
             data = self.fetch_data(item)
-            for i in range(novel_view_nums):
-                ratio_tmp = (i+0.5)*(1/novel_view_nums)
-                data_i = get_novel_calib(data, self.cfg.dataset, ratio=ratio_tmp, intr_key='intr_ori', extr_key='extr_ori')
-                with torch.no_grad():
-                    data_i, _, _ = self.model(data_i, is_train=False)
-                    data_i = pts2render(data_i, bg_color=self.cfg.dataset.bg_color)
+            #  Raft Stereo + GS Regresser
+            data, _, _ = self.model(data, is_train=False)
+            #  Gaussian Render
+            data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
 
-                render_novel = self.tensor2np(data['novel_view']['img_pred'])
-                cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg' % (data_i['name'], str(i).zfill(2)), render_novel)
+            render_novel = data['novel_view']['img_pred']
+            gt_novel = data['novel_view']['img'].cuda()
+
+            Ll1 = l1_loss(render_novel, gt_novel)
+            Lssim = 1.0 - ssim(render_novel, gt_novel)
+
+            print("l1 loss is", Ll1, "ssim loss is", Lssim)
+
+            # loss = 1.0 * flow_loss + 0.8 * Ll1 + 0.2 * Lssim
+            # for i in range(novel_view_nums):
+            #     ratio_tmp = (i+0.5)*(1/novel_view_nums)
+            #     data_i = get_novel_calib(data, self.cfg.dataset, ratio=ratio_tmp, intr_key='intr_ori', extr_key='extr_ori')
+            #     with torch.no_grad():
+            #         data_i, _, _ = self.model(data_i, is_train=False)
+            #         data_i = pts2render(data_i, bg_color=self.cfg.dataset.bg_color)
+            #
+            #     render_novel = self.tensor2np(data['novel_view']['img_pred'])
+            #     cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg' % (data_i['name'], str(i).zfill(2)), render_novel)
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
