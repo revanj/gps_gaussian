@@ -50,6 +50,8 @@ class StereoHumanRender:
         render_novel = data['novel_view']['img_pred']
         gt_novel = data['novel_view']['img'].cuda()
 
+        print(render_novel.shape, gt_novel.shape)
+
         Ll1 = l1_loss(render_novel, gt_novel)
         Lssim = 1.0 - ssim(render_novel, gt_novel)
 
