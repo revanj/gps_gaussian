@@ -41,7 +41,7 @@ class StereoHumanRender:
         # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         # for idx in tqdm(range(total_samples)):
         #     item = self.dataset.get_test_item(idx, source_id=view_select)
-        total_frames = 20
+        total_frames = 10
         sum_ssim = 0
         sum_l1 = 0
         for _ in range(total_frames):
@@ -60,6 +60,7 @@ class StereoHumanRender:
             print("l1 loss is", Ll1, "ssim loss is", Lssim)
             sum_ssim += Lssim
             sum_l1 += Ll1
+
         sum_ssim /= total_frames
         sum_l1 /= total_frames
 
