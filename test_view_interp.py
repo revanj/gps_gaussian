@@ -54,6 +54,9 @@ class StereoHumanRender:
             Ll1 = l1_loss(render_novel, gt_novel)
             Lssim = 1.0 - ssim(render_novel, gt_novel)
 
+            render_novel = self.tensor2np(render_novel)
+            cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg', render_novel)
+
             print("l1 loss is", Ll1, "ssim loss is", Lssim)
 
 
