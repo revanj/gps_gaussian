@@ -6,6 +6,8 @@ import numpy as np
 import cv2
 import os
 from pathlib import Path
+
+from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from lib.human_loader import StereoHumanDataset
@@ -26,40 +28,43 @@ class StereoHumanRender:
         self.bs = self.cfg.batch_size
 
         self.model = RtStereoHumanModel(self.cfg, with_gs_render=True)
-        self.dataset = StereoHumanDataset(self.cfg.dataset, phase=phase)
+        self.dataset = StereoHumanDataset(self.cfg.dataset, phase='train')
+        self.data_loader = DataLoader(self.dataset, batch_size=self.cfg.batch_size, shuffle=True,
+                                       num_workers=self.cfg.batch_size * 2, pin_memory=True)
+        self.data_iterator = iter(self.data_loader)
         self.model.cuda()
         if self.cfg.restore_ckpt:
             self.load_ckpt(self.cfg.restore_ckpt)
         self.model.eval()
 
     def infer_static(self, view_select, novel_view_nums):
-        total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
-        for idx in tqdm(range(total_samples)):
-            item = self.dataset.get_test_item(idx, source_id=view_select)
-            data = self.fetch_data(item)
-            #  Raft Stereo + GS Regresser
-            data, _, _ = self.model(data, is_train=False)
-            #  Gaussian Render
-            data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
+        # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
+        # for idx in tqdm(range(total_samples)):
+        #     item = self.dataset.get_test_item(idx, source_id=view_select)
+        data = self.fetch_data(phase='train')
+        #  Raft Stereo + GS Regresser
+        data, _, _ = self.model(data, is_train=False)
+        #  Gaussian Render
+        data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
 
-            render_novel = data['novel_view']['img_pred']
-            gt_novel = data['novel_view']['img'].cuda()
+        render_novel = data['novel_view']['img_pred']
+        gt_novel = data['novel_view']['img'].cuda()
 
-            Ll1 = l1_loss(render_novel, gt_novel)
-            Lssim = 1.0 - ssim(render_novel, gt_novel)
+        Ll1 = l1_loss(render_novel, gt_novel)
+        Lssim = 1.0 - ssim(render_novel, gt_novel)
 
-            print("l1 loss is", Ll1, "ssim loss is", Lssim)
+        print("l1 loss is", Ll1, "ssim loss is", Lssim)
 
-            # loss = 1.0 * flow_loss + 0.8 * Ll1 + 0.2 * Lssim
-            # for i in range(novel_view_nums):
-            #     ratio_tmp = (i+0.5)*(1/novel_view_nums)
-            #     data_i = get_novel_calib(data, self.cfg.dataset, ratio=ratio_tmp, intr_key='intr_ori', extr_key='extr_ori')
-            #     with torch.no_grad():
-            #         data_i, _, _ = self.model(data_i, is_train=False)
-            #         data_i = pts2render(data_i, bg_color=self.cfg.dataset.bg_color)
-            #
-            #     render_novel = self.tensor2np(data['novel_view']['img_pred'])
-            #     cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg' % (data_i['name'], str(i).zfill(2)), render_novel)
+        # loss = 1.0 * flow_loss + 0.8 * Ll1 + 0.2 * Lssim
+        # for i in range(novel_view_nums):
+        #     ratio_tmp = (i+0.5)*(1/novel_view_nums)
+        #     data_i = get_novel_calib(data, self.cfg.dataset, ratio=ratio_tmp, intr_key='intr_ori', extr_key='extr_ori')
+        #     with torch.no_grad():
+        #         data_i, _, _ = self.model(data_i, is_train=False)
+        #         data_i = pts2render(data_i, bg_color=self.cfg.dataset.bg_color)
+        #
+        #     render_novel = self.tensor2np(data['novel_view']['img_pred'])
+        #     cv2.imwrite(self.cfg.test_out_path + '/%s_novel%s.jpg' % (data_i['name'], str(i).zfill(2)), render_novel)
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
@@ -67,11 +72,24 @@ class StereoHumanRender:
         img_np = img_np[:, :, ::-1].astype(np.uint8)
         return img_np
 
-    def fetch_data(self, data):
+    def fetch_data(self, phase):
+        if phase == 'train':
+            try:
+                data = next(self.data_iterator)
+            except:
+                self.data_iterator = iter(self.data_loader)
+                data = next(self.data_iterator)
+       
         for view in ['lmain', 'rmain']:
             for item in data[view].keys():
-                data[view][item] = data[view][item].cuda().unsqueeze(0)
+                data[view][item] = data[view][item].cuda()
         return data
+
+    # def fetch_data(self, data):
+    #     for view in ['lmain', 'rmain']:
+    #         for item in data[view].keys():
+    #             data[view][item] = data[view][item].cuda().unsqueeze(0)
+    #     return data
 
     def load_ckpt(self, load_path):
         assert os.path.exists(load_path)
