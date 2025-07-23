@@ -41,21 +41,22 @@ class StereoHumanRender:
         # total_samples = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         # for idx in tqdm(range(total_samples)):
         #     item = self.dataset.get_test_item(idx, source_id=view_select)
-        data = self.fetch_data(phase='train')
-        #  Raft Stereo + GS Regresser
-        data, _, _ = self.model(data, is_train=False)
-        #  Gaussian Render
-        data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
+        for _ in range(200):
+            data = self.fetch_data(phase='train')
+            #  Raft Stereo + GS Regresser
+            data, _, _ = self.model(data, is_train=False)
+            #  Gaussian Render
+            data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
 
-        render_novel = data['novel_view']['img_pred']
-        gt_novel = data['novel_view']['img'].cuda()
+            render_novel = data['novel_view']['img_pred']
+            gt_novel = data['novel_view']['img'].cuda()
 
-        print(render_novel.shape, gt_novel.shape)
+            print(render_novel.shape, gt_novel.shape)
 
-        Ll1 = l1_loss(render_novel, gt_novel)
-        Lssim = 1.0 - ssim(render_novel, gt_novel)
+            Ll1 = l1_loss(render_novel, gt_novel)
+            Lssim = 1.0 - ssim(render_novel, gt_novel)
 
-        print("l1 loss is", Ll1, "ssim loss is", Lssim)
+            print("l1 loss is", Ll1, "ssim loss is", Lssim)
 
         # loss = 1.0 * flow_loss + 0.8 * Ll1 + 0.2 * Lssim
         # for i in range(novel_view_nums):
