@@ -42,10 +42,11 @@ class StereoHumanRender:
 
     def infer_seqence(self, view_select, ratio=0.5):
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
-        for idx in tqdm(range(total_frames-2)):
+        for idx in tqdm(range(total_frames-3)):
             data = self.run_inference(view_select, idx, ratio=ratio)
             data_1 = self.run_inference(view_select, idx + 1, ratio=ratio)
             data_2 = self.run_inference(view_select, idx + 2, ratio=ratio)
+            data_3 = self.run_inference(view_select, idx + 3, ratio=ratio)
             render_novel = self.tensor2np(data['novel_view']['img_pred'])
             cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
 
