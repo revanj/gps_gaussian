@@ -23,7 +23,7 @@ class RtStereoHumanModel(nn.Module):
         if self.with_gs_render:
             self.gs_parm_regresser = GSRegresser(self.cfg, rgb_dim=3, depth_dim=1)
 
-    def forward(self, data, is_train=True):
+    def forward(self, data, is_train=True, data0 = None, data2 = None):
         import time
         bs = data['lmain']['img'].shape[0]
 
@@ -63,6 +63,15 @@ class RtStereoHumanModel(nn.Module):
             if not self.with_gs_render:
                 return data, flow_loss, metrics
             flow2gs_start = time.time_ns()
+
+            # depth0 and depth2 will be {"lmain" = }
+            if not data0 is None and not data2 is None:
+                for view in ['lmain', 'rmain']:
+                    data[view]['depth'] = (data0[view]['depth'] + data2[view]['depth']) / 2
+            else:
+                for view in ['lmain', 'rmain']:
+                    data[view]['depth'] = flow2depth(data[view])
+
             data = self.flow2gsparms(image, img_feat, data, bs)
             flow2gs_end = time.time_ns()
             # print("flow to gs network time", (flow2gs_end - flow2gs_start) * 10**(-6))
@@ -71,12 +80,6 @@ class RtStereoHumanModel(nn.Module):
 
     def flow2gsparms(self, lr_img, lr_img_feat, data, bs):
         for view in ['lmain', 'rmain']:
-            flow_to_depth_start = time.time_ns()
-            data[view]['depth'] = flow2depth(data[view])
-            flow_to_depth_end = time.time_ns()
-            # print("flow to depth time:", (flow_to_depth_end - flow_to_depth_start) * 10**(-6))
-
-            depth_to_pc_time_start = time.time_ns()
             data[view]['xyz'] = depth2pc(data[view]['depth'], data[view]['extr'], data[view]['intr']).view(bs, -1, 3)
             depth_to_pc_time_end = time.time_ns()
             # print("depth to pc time:", (depth_to_pc_time_end - depth_to_pc_time_start) * 10**(-6))

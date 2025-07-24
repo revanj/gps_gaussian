@@ -31,12 +31,12 @@ class StereoHumanRender:
             self.load_ckpt(self.cfg.restore_ckpt)
         self.model.eval()
 
-    def run_inference(self, view_select, idx, ratio=0.5):
+    def run_inference(self, view_select, idx, ratio=0.5, data0 = None, data2 = None):
         item = self.dataset.get_test_item(idx, source_id=view_select)
         data = self.fetch_data(item)
         data = get_novel_calib(data, self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
         with torch.no_grad():
-            data, _, _ = self.model(data, is_train=False)
+            data, _, _ = self.model(data, is_train=False, data0=data0, data2=data2)
             data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
         return data
 
@@ -44,11 +44,12 @@ class StereoHumanRender:
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         for idx in tqdm(range(total_frames-3)):
             data = self.run_inference(view_select, idx, ratio=ratio)
-            data_1 = self.run_inference(view_select, idx + 1, ratio=ratio)
+            # data_1 = self.run_inference(view_select, idx + 1, ratio=ratio)
             data_2 = self.run_inference(view_select, idx + 2, ratio=ratio)
-            data_3 = self.run_inference(view_select, idx + 3, ratio=ratio)
+            data_synth = self.run_inference(view_select, idx + 3, ratio=ratio, data0=data, data2=data_2)
             render_novel = self.tensor2np(data['novel_view']['img_pred'])
             cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
+            cv2.imwrite(self.cfg.test_out_path + '/%s_novel_synth.jpg' % (data['name']), self.tensor2np(data_synth['novel_view']['img_pred']))
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
