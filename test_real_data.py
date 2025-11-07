@@ -16,6 +16,10 @@ from lib.GaussianRender import pts2render
 
 import torch
 import warnings
+
+from PIL import Image
+import torchvision.transforms as T
+
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
@@ -31,29 +35,80 @@ class StereoHumanRender:
             self.load_ckpt(self.cfg.restore_ckpt)
         self.model.eval()
 
-    def run_inference(self, view_select, idx, ratio=0.5, data0 = None, data2 = None):
+    def run_inference(self, view_select, idx, ratio=0.5, ldepth = None, rdepth = None):
         item = self.dataset.get_test_item(idx, source_id=view_select)
         data = self.fetch_data(item)
         data = get_novel_calib(data, self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
         with torch.no_grad():
-            data, _, _ = self.model(data, is_train=False, data0=data0, data2=data2)
+            data, _, _ = self.model(data, is_train=False, ldepth = ldepth, rdepth = rdepth)
             data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
         return data
 
+    def psnr(self, img1, img2):
+        mse = (((img1 - img2)) ** 2).view(img1.shape[0], -1).mean(1, keepdim=True)
+        return 20 * torch.log10(1.0 / torch.sqrt(mse))
+
     def infer_seqence(self, view_select, ratio=0.5):
+        total_psnr = 0
+        counter = 0
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
-        for idx in tqdm(range(total_frames-3)):
-            data = self.run_inference(view_select, idx, ratio=ratio)
-            # data_1 = self.run_inference(view_select, idx + 1, ratio=ratio)
-            data_2 = self.run_inference(view_select, idx + 2, ratio=ratio)
-            data_synth = self.run_inference(view_select, idx + 3, ratio=ratio, data0=data, data2=data_2)
+        for idx in tqdm(range(2, total_frames)):
+            depth_l = Image.open("/home/revanj/repos/avatar/gps_gaussian/depth_interpolate/left_depth/{:04d}_left_depth.jpg".format(idx-1)).convert("L")
+            depth_r = Image.open("/home/revanj/repos/avatar/gps_gaussian/depth_interpolate/right_depth/{:04d}_right_depth.jpg".format(idx-1)).convert("L")
+            flow_l = np.load("/home/revanj/repos/avatar/gps_gaussian/flow_bg_npy/left_view/{:04d}_flow.jpg.npy".format(idx)).astype(np.float32)
+            flow_l = np.floor(flow_l).astype(np.uint32)
+            flow_r = np.load("/home/revanj/repos/avatar/gps_gaussian/flow_bg_npy/right_view/{:04d}_flow.jpg.npy".format(idx)).astype(np.float32)
+            flow_r = np.floor(flow_r).astype(np.uint32)
+            to_tensor = T.ToTensor()
+            depth_l = to_tensor(depth_l).unsqueeze(0).cuda()
+            depth_r = to_tensor(depth_r).unsqueeze(0).cuda()
+            depth_l_new = depth_l.clone()
+            depth_r_new = depth_r.clone()
+
+            for (flow, depth, depth_new) in [(flow_l, depth_l, depth_l_new), (flow_r, depth_r, depth_r_new)]:
+                for i in range(0, 1024):
+                    for j in range(0, 1024):
+                        target_h = i + flow[i, j, 0]
+                        target_w = j + flow[i, j, 1]
+                        if 0 <= target_h < 1024 and 0 <= target_w < 1024:
+                            depth_new[0, 0, target_h, target_w] = depth[0, 0, i, j]
+
+            # data = self.run_inference(view_select, idx, ratio=ratio, ldepth=depth_l, rdepth=depth_r)
+            data = self.run_inference(view_select, idx-2, ratio=ratio, ldepth=depth_l_new, rdepth=depth_r_new)
+            # data = self.run_inference(view_select, idx-2, ratio=ratio)
+            # data = self.run_inference(view_select, idx-2, ratio=ratio)
+            # render_novel = self.tensor2np(data['novel_view']['img_pred'])
+            # ldepth =  self.tensor2np(data['lmain']['depth'])
+            # rdepth = self.tensor2np(data['rmain']['depth'])
+            # lview = self.tensor2np_img(data['lmain']['img'])
+            # rview = self.tensor2np_img(data['rmain']['img'])
+
             render_novel = self.tensor2np(data['novel_view']['img_pred'])
+            # gt_novel = data['novel_view']['img_pred']
+            # psnr_value = self.psnr(render_novel, gt_novel).mean().double()
+            # total_psnr += psnr_value
+            # counter += 1
+            # print("psnr is", psnr_value)
+
+            # if idx % 2 == 0:
             cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
-            cv2.imwrite(self.cfg.test_out_path + '/%s_novel_synth.jpg' % (data['name']), self.tensor2np(data_synth['novel_view']['img_pred']))
+            # cv2.imwrite(self.cfg.test_out_path + '/%s_left_view_bg.jpg' % (data['name']), lview)
+            # cv2.imwrite(self.cfg.test_out_path + '/%s_right_view_bg.jpg' % (data['name']), rview)
+
+        print("average psnr is", total_psnr/counter)
+
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
+        # img_np = img_tensor[0].detach().cpu().numpy()
         img_np = img_np * 255
+        img_np = img_np[:, :, ::-1].astype(np.uint8)
+        return img_np
+
+    def tensor2np_img(self, img_tensor):
+        img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
+        # img_np = img_tensor[0].detach().cpu().numpy()
+        img_np = (img_np/2.0 + 0.5) * 255
         img_np = img_np[:, :, ::-1].astype(np.uint8)
         return img_np
 

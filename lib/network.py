@@ -23,7 +23,7 @@ class RtStereoHumanModel(nn.Module):
         if self.with_gs_render:
             self.gs_parm_regresser = GSRegresser(self.cfg, rgb_dim=3, depth_dim=1)
 
-    def forward(self, data, is_train=True, data0 = None, data2 = None):
+    def forward(self, data, is_train=True, ldepth = None, rdepth = None):
         import time
         bs = data['lmain']['img'].shape[0]
 
@@ -64,10 +64,9 @@ class RtStereoHumanModel(nn.Module):
                 return data, flow_loss, metrics
             flow2gs_start = time.time_ns()
 
-            # depth0 and depth2 will be {"lmain" = }
-            if not data0 is None and not data2 is None:
-                for view in ['lmain', 'rmain']:
-                    data[view]['depth'] = (data0[view]['depth'] + data2[view]['depth']) / 2
+            if not ldepth is None and not rdepth is None:
+                data['lmain']['depth'] = ldepth
+                data['rmain']['depth'] = rdepth
             else:
                 for view in ['lmain', 'rmain']:
                     data[view]['depth'] = flow2depth(data[view])
