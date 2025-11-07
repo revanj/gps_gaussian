@@ -2,3 +2,6 @@
 /experiments
 /test_out
 /interp_out
+data/
+trained_models/
+.idea/
