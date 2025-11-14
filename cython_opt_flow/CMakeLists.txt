@@ -1,5 +1,69 @@
 cmake_minimum_required(VERSION 3.18)
-project(cython_cmake_demo LANGUAGES CXX)
+project(cython_cmake_demo LANGUAGES CXX CUDA)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# set(FREEIMAGE_INC_DIR /usr/include)
+find_path(FREEIMAGE_INC_DIR NAMES FreeImage.h)
+find_library(FREEIMAGE_LIB freeimage)
+
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler=-fpermissive")
+link_directories(${FREEIMAGE_LIB})
+
+
+
+set(NVOF_PUBLIC_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/NvOFInterface)
+set(NVOF_UTILS_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFUtils.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFDataLoader.cpp
+)
+set(NVOF_UTILS_HDRS
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFUtils.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFDataLoader.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFCmdParser.h
+)
+set(NVOF_UTILS_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils)
+set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/test.cpp")
+
+set(NVOF_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase/NvOF.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase/NvOFCuda.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/NvOFUtilsCuda.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/Utils/kernel.cu
+)
+set(NVOF_HDRS
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase/NvOF.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase/NvOFCuda.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase/NvOFDefines.h
+        ${NVOF_PUBLIC_INCLUDE_DIR}/nvOpticalFlowCommon.h
+        ${NVOF_PUBLIC_INCLUDE_DIR}/nvOpticalFlowCuda.h
+)
+source_group( "include" FILES ${NVOF_HDRS} ${NVOF_UTILS_HDRS})
+source_group( "source" FILES ${APP_SOURCES} ${NVOF_SOURCES} ${NVOF_UTILS_SOURCES})
+
+
+set(CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
+set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_89,code=\"sm_89,compute_89\")
+if ( CMAKE_COMPILER_IS_GNUCC )
+    if(NOT "${CUDA_NVCC_FLAGS}" MATCHES "-std=c\\+\\+11" )
+        list(APPEND CUDA_NVCC_FLAGS -std=c++11)
+    endif()
+endif()
+
+find_package(CUDA)
+
+cuda_add_executable(${PROJECT_NAME}  ${APP_SOURCES} ${NVOF_SOURCES} ${NVOF_UTILS_SOURCES} ${NVOF_HDRS} ${NVOF_HDRS} ${NVOF_UTILS_HDRS})
+set_target_properties(${PROJECT_NAME} PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+target_include_directories(${PROJECT_NAME} PUBLIC ${CUDA_INCLUDE_DIRS}
+        ${FREEIMAGE_INC_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Common/NvOFBase
+        ${NVOF_UTILS_INCLUDE_DIR}
+        ${NVOF_PUBLIC_INCLUDE_DIR}
+)
+target_link_libraries(${PROJECT_NAME} ${CUDA_CUDA_LIBRARY} ${CMAKE_DL_LIBS} ${FREEIMAGE_LIB})
+
 
 find_package(Python REQUIRED COMPONENTS Interpreter Development NumPy)
 

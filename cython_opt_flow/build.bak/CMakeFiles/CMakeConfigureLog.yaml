@@ -1,0 +1,2199 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+      - "/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/uname"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/uname"
+      - "/home/revanj/anaconda3/condabin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.12.57-1-lts - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/gmake"
+      - "/home/revanj/anaconda3/condabin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/usr/lib/emscripten/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/usr/lib/rustup/bin/gmake"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/gmake"
+      - "/home/revanj/bin/shader-slang/bin/gmake"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/make"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/make"
+      - "/home/revanj/anaconda3/condabin/make"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/sbin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++ 
+      Build flags: -fvisibility-inlines-hidden;-fmessage-length=0;-march=nocona;-mtune=haswell;-ftree-vectorize;-fPIC;-fstack-protector-strong;-fno-plt;-O2;-ffunction-sections;-pipe;-isystem;/home/revanj/anaconda3/envs/gps_gaussian/include
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/4.1.2/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-ar"
+      - "ar"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-ar"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-ranlib"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-strip"
+      - "strip"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-strip"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-ld"
+      - "ld"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-ld"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-nm"
+      - "nm"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-nm"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-objdump"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-objcopy"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-readelf"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-dlltool"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-dlltool"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-dlltool"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/dlltool"
+      - "/home/revanj/anaconda3/condabin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/bin/dlltool"
+      - "/usr/lib/emscripten/dlltool"
+      - "/usr/lib/jvm/default/bin/dlltool"
+      - "/usr/bin/site_perl/dlltool"
+      - "/usr/bin/vendor_perl/dlltool"
+      - "/usr/bin/core_perl/dlltool"
+      - "/usr/lib/rustup/bin/dlltool"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/dlltool"
+      - "/home/revanj/bin/shader-slang/bin/dlltool"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-addr2line"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-tapi"
+      - "tapi"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-tapi"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-tapi"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-tapi"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-tapi"
+      - "/usr/bin/x86_64-conda-linux-gnu-tapi"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-tapi"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-tapi"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-tapi"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-tapi"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-tapi"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-tapi"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-tapi"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-tapi"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/tapi"
+      - "/home/revanj/anaconda3/condabin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/bin/tapi"
+      - "/usr/lib/emscripten/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+      - "/usr/lib/rustup/bin/tapi"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/tapi"
+      - "/home/revanj/bin/shader-slang/bin/tapi"
+    found: false
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "x86_64-conda-linux-gnu-gcc-ar-11"
+      - "x86_64-conda-linux-gnu-gcc-ar11"
+      - "x86_64-conda-linux-gnu-gcc-ar"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ar-11.4"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ar-11"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ar11"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ar11"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ar"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "x86_64-conda-linux-gnu-gcc-ranlib"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/condabin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/emscripten/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/"
+      - "/home/revanj/bin/shader-slang/bin/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ranlib-11.4"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ranlib-11"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/home/revanj/anaconda3/condabin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/local/sbin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/local/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/lib/emscripten/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/lib/jvm/default/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/bin/site_perl/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/bin/vendor_perl/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/bin/core_perl/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/usr/lib/rustup/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/home/revanj/.local/share/JetBrains/Toolbox/scripts/x86_64-conda-linux-gnu-gcc-ranlib11"
+      - "/home/revanj/bin/shader-slang/bin/x86_64-conda-linux-gnu-gcc-ranlib11"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-gcc-ranlib"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE"
+      binary: "/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/revanj/anaconda3/envs/gps_gaussian/include"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/revanj/anaconda3/envs/gps_gaussian/lib -Wl,-rpath-link,/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/lib"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE'
+        
+        Run Build Command(s): /home/revanj/anaconda3/envs/gps_gaussian/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_824b3/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_824b3.dir/build.make CMakeFiles/cmTC_824b3.dir/build
+        make[1]: Entering directory '/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE'
+        Building CXX object CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o
+        /home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/revanj/anaconda3/envs/gps_gaussian/include    -v -o CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -c /home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        Reading specs from /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/specs
+        could not find specs file conda.specs
+        COLLECT_GCC=/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++
+        Target: x86_64-conda-linux-gnu
+        Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --mandir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/man --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-lto --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/work/cf-compilers/x86_64-conda-linux-gnu/sysroot --with-native-system-header-dir=/usr/include --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++ --with-pkgversion='conda-forge gcc 11.4.0-13' --with-bugurl=https://github.com/conda-forge/ctng-compilers-feedstock/issues/new/choose --enable-libsanitizer --enable-default-pie --enable-threads=posix
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.4.0 (conda-forge gcc 11.4.0-13) 
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/'
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/cc1plus -quiet -v -iprefix /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/ -isysroot /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/revanj/anaconda3/envs/gps_gaussian/include /home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_824b3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=nocona -mtune=haswell -O2 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o /tmp/ccf54oJe.s
+        GNU C++17 (conda-forge gcc 11.4.0-13) version 11.4.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 13.2.0, GMP version 6.1.0, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/include"
+        ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++"
+        ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu"
+        ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward"
+        ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include"
+        ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"
+        ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed"
+        ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/revanj/anaconda3/envs/gps_gaussian/include
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/include
+        End of search list.
+        GNU C++17 (conda-forge gcc 11.4.0-13) version 11.4.0 (x86_64-conda-linux-gnu)
+        	compiled by GNU C version 13.2.0, GMP version 6.1.0, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: b752247fe42c4276663fdd6348116302
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/'
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccf54oJe.s
+        GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_824b3
+        /home/revanj/anaconda3/envs/gps_gaussian/bin/cmake -E cmake_link_script CMakeFiles/cmTC_824b3.dir/link.txt --verbose=1
+        Reading specs from /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/specs
+        could not find specs file conda.specs
+        COLLECT_GCC=/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++
+        COLLECT_LTO_WRAPPER=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper
+        Target: x86_64-conda-linux-gnu
+        Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --mandir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/man --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-languages=c,c++,fortran,objc,obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-lto --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/work/cf-compilers/x86_64-conda-linux-gnu/sysroot --with-native-system-header-dir=/usr/include --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++ --with-pkgversion='conda-forge gcc 11.4.0-13' --with-bugurl=https://github.com/conda-forge/ctng-compilers-feedstock/issues/new/choose --enable-libsanitizer --enable-default-pie --enable-threads=posix
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.4.0 (conda-forge gcc 11.4.0-13) 
+        COMPILER_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/
+        LIBRARY_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-L/home/revanj/anaconda3/envs/gps_gaussian/lib' '-v' '-o' 'cmTC_824b3' '-shared-libgcc' '-dumpdir' 'cmTC_824b3.'
+         /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/collect2 -plugin /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/liblto_plugin.so -plugin-opt=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccizKbkc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_824b3 /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o -L/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0 -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../.. -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections --allow-shlib-undefined -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib -rpath-link /home/revanj/anaconda3/envs/gps_gaussian/lib -v CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib
+        collect2 version 11.4.0
+        /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/liblto_plugin.so -plugin-opt=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccizKbkc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_824b3 /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o -L/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0 -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../.. -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections --allow-shlib-undefined -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib -rpath-link /home/revanj/anaconda3/envs/gps_gaussian/lib -v CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib
+        GNU ld (GNU Binutils) 2.40
+        COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-L/home/revanj/anaconda3/envs/gps_gaussian/lib' '-v' '-o' 'cmTC_824b3' '-shared-libgcc' '-dumpdir' 'cmTC_824b3.'
+        /home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++ -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/revanj/anaconda3/envs/gps_gaussian/include  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/revanj/anaconda3/envs/gps_gaussian/lib -Wl,-rpath-link,/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/lib -v -Wl,-v CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_824b3
+        make[1]: Leaving directory '/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/include]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed]
+          add: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/include] ==> [/home/revanj/anaconda3/envs/gps_gaussian/include]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed]
+        collapse include dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/include] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/include]
+        implicit include dirs: [/home/revanj/anaconda3/envs/gps_gaussian/include;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/revanj/anaconda3/envs/gps_gaussian/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_824b3/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_824b3.dir/build.make CMakeFiles/cmTC_824b3.dir/build]
+        ignore line: [make[1]: Entering directory '/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/CMakeScratch/TryCompile-blCOhE']
+        ignore line: [Building CXX object CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++   -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -isystem /home/revanj/anaconda3/envs/gps_gaussian/include    -v -o CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -c /home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Reading specs from /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/specs]
+        ignore line: [could not find specs file conda.specs]
+        ignore line: [COLLECT_GCC=/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --mandir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/man --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-lto --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/work/cf-compilers/x86_64-conda-linux-gnu/sysroot --with-native-system-header-dir=/usr/include --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++ --with-pkgversion='conda-forge gcc 11.4.0-13' --with-bugurl=https://github.com/conda-forge/ctng-compilers-feedstock/issues/new/choose --enable-libsanitizer --enable-default-pie --enable-threads=posix]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.4.0 (conda-forge gcc 11.4.0-13) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/']
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/cc1plus -quiet -v -iprefix /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/ -isysroot /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot -D_GNU_SOURCE -isystem /home/revanj/anaconda3/envs/gps_gaussian/include /home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_824b3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -march=nocona -mtune=haswell -O2 -version -fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -ffunction-sections -o /tmp/ccf54oJe.s]
+        ignore line: [GNU C++17 (conda-forge gcc 11.4.0-13) version 11.4.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.1.0  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++"]
+        ignore line: [ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward"]
+        ignore line: [ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/../../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/include]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/x86_64-conda-linux-gnu]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++/backward]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/include-fixed]
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (conda-forge gcc 11.4.0-13) version 11.4.0 (x86_64-conda-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.1.0  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: b752247fe42c4276663fdd6348116302]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/']
+        ignore line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccf54oJe.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-conda-linux-gnu) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-v' '-o' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-dumpdir' 'CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_824b3]
+        ignore line: [/home/revanj/anaconda3/envs/gps_gaussian/bin/cmake -E cmake_link_script CMakeFiles/cmTC_824b3.dir/link.txt --verbose=1]
+        ignore line: [Reading specs from /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/specs]
+        ignore line: [could not find specs file conda.specs]
+        ignore line: [COLLECT_GCC=/home/revanj/anaconda3/envs/gps_gaussian/bin/x86_64-conda-linux-gnu-c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper]
+        ignore line: [Target: x86_64-conda-linux-gnu]
+        ignore line: [Configured with: ../configure --prefix=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho --with-slibdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --libdir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib --mandir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/man --build=x86_64-conda-linux-gnu --host=x86_64-conda-linux-gnu --target=x86_64-conda-linux-gnu --enable-languages=c c++ fortran objc obj-c++ --enable-__cxa_atexit --disable-libmudflap --enable-libgomp --disable-libssp --enable-libquadmath --enable-libquadmath-support --enable-lto --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-bootstrap --disable-multilib --enable-long-long --with-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/x86_64-conda-linux-gnu/sysroot --with-build-sysroot=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/work/cf-compilers/x86_64-conda-linux-gnu/sysroot --with-native-system-header-dir=/usr/include --with-gxx-include-dir=/home/conda/feedstock_root/build_artifacts/gcc_compilers_1719176526088/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/lib/gcc/x86_64-conda-linux-gnu/11.4.0/include/c++ --with-pkgversion='conda-forge gcc 11.4.0-13' --with-bugurl=https://github.com/conda-forge/ctng-compilers-feedstock/issues/new/choose --enable-libsanitizer --enable-default-pie --enable-threads=posix]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.4.0 (conda-forge gcc 11.4.0-13) ]
+        ignore line: [COMPILER_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/:/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fvisibility-inlines-hidden' '-fmessage-length=0' '-march=nocona' '-mtune=haswell' '-ftree-vectorize' '-fPIC' '-fstack-protector-strong' '-fno-plt' '-O2' '-ffunction-sections' '-isystem' '/home/revanj/anaconda3/envs/gps_gaussian/include' '-L/home/revanj/anaconda3/envs/gps_gaussian/lib' '-v' '-o' 'cmTC_824b3' '-shared-libgcc' '-dumpdir' 'cmTC_824b3.']
+        link line: [ /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/collect2 -plugin /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/liblto_plugin.so -plugin-opt=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccizKbkc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_824b3 /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o -L/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0 -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../.. -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections --allow-shlib-undefined -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib -rpath-link /home/revanj/anaconda3/envs/gps_gaussian/lib -v CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib]
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccizKbkc.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_824b3] ==> ignore
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o]
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o]
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o] ==> obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../..] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../..]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib]
+          arg [-L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib]
+          arg [-O2] ==> ignore
+          arg [--sort-common] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-znow] ==> ignore
+          arg [--disable-new-dtags] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [--allow-shlib-undefined] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/lib] ==> ignore
+          arg [-rpath-link] ==> ignore
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o] ==> obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o]
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o]
+          arg [-rpath] ==> ignore
+          arg [/home/revanj/anaconda3/envs/gps_gaussian/lib] ==> ignore
+        ignore line: [collect2 version 11.4.0]
+        ignore line: [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/ld -plugin /home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/liblto_plugin.so -plugin-opt=/home/revanj/anaconda3/envs/gps_gaussian/bin/../libexec/gcc/x86_64-conda-linux-gnu/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccizKbkc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_824b3 /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o -L/home/revanj/anaconda3/envs/gps_gaussian/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0 -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../.. -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib -L/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib -O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections --allow-shlib-undefined -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib -rpath-link /home/revanj/anaconda3/envs/gps_gaussian/lib -v CMakeFiles/cmTC_824b3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o /home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o -rpath /home/revanj/anaconda3/envs/gps_gaussian/lib]
+        linker tool for 'CXX': /home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/ld
+        collapse obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/Scrt1.o] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o]
+        collapse obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crti.o] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o]
+        collapse obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o]
+        collapse obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o]
+        collapse obj [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib/crtn.o] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib/../lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib/../lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib/../lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../..] ==> [/home/revanj/anaconda3/envs/gps_gaussian/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/lib]
+        collapse library dir [/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr/lib] ==> [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/Scrt1.o;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/crti.o;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtbeginS.o;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0/crtendS.o;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/crtn.o]
+        implicit dirs: [/home/revanj/anaconda3/envs/gps_gaussian/lib;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc/x86_64-conda-linux-gnu/11.4.0;/home/revanj/anaconda3/envs/gps_gaussian/lib/gcc;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/lib;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/lib;/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/home/revanj/anaconda3/envs/gps_gaussian/bin/../lib/gcc/x86_64-conda-linux-gnu/11.4.0/../../../../x86_64-conda-linux-gnu/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.40
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:2015 (find_program)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "program"
+    variable: "_Python_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.14mu"
+      - "python3.14m"
+      - "python3.14u"
+      - "python3.14"
+      - "python3.14dmu"
+      - "python3.14dm"
+      - "python3.14du"
+      - "python3.14d"
+      - "python3.13mu"
+      - "python3.13m"
+      - "python3.13u"
+      - "python3.13"
+      - "python3.13dmu"
+      - "python3.13dm"
+      - "python3.13du"
+      - "python3.13d"
+      - "python3.12mu"
+      - "python3.12m"
+      - "python3.12u"
+      - "python3.12"
+      - "python3.12dmu"
+      - "python3.12dm"
+      - "python3.12du"
+      - "python3.12d"
+      - "python3.11mu"
+      - "python3.11m"
+      - "python3.11u"
+      - "python3.11"
+      - "python3.11dmu"
+      - "python3.11dm"
+      - "python3.11du"
+      - "python3.11d"
+      - "python3.10mu"
+      - "python3.10m"
+      - "python3.10u"
+      - "python3.10"
+      - "python3.10dmu"
+      - "python3.10dm"
+      - "python3.10du"
+      - "python3.10d"
+      - "python3.9mu"
+      - "python3.9m"
+      - "python3.9u"
+      - "python3.9"
+      - "python3.9dmu"
+      - "python3.9dm"
+      - "python3.9du"
+      - "python3.9d"
+      - "python3.8mu"
+      - "python3.8m"
+      - "python3.8u"
+      - "python3.8"
+      - "python3.8dmu"
+      - "python3.8dm"
+      - "python3.8du"
+      - "python3.8d"
+      - "python3.7mu"
+      - "python3.7m"
+      - "python3.7u"
+      - "python3.7"
+      - "python3.7dmu"
+      - "python3.7dm"
+      - "python3.7du"
+      - "python3.7d"
+      - "python3.6mu"
+      - "python3.6m"
+      - "python3.6u"
+      - "python3.6"
+      - "python3.6dmu"
+      - "python3.6dm"
+      - "python3.6du"
+      - "python3.6d"
+      - "python3.5mu"
+      - "python3.5m"
+      - "python3.5u"
+      - "python3.5"
+      - "python3.5dmu"
+      - "python3.5dm"
+      - "python3.5du"
+      - "python3.5d"
+      - "python3.4mu"
+      - "python3.4m"
+      - "python3.4u"
+      - "python3.4"
+      - "python3.4dmu"
+      - "python3.4dm"
+      - "python3.4du"
+      - "python3.4d"
+      - "python3.3mu"
+      - "python3.3m"
+      - "python3.3u"
+      - "python3.3"
+      - "python3.3dmu"
+      - "python3.3dm"
+      - "python3.3du"
+      - "python3.3d"
+      - "python3.2mu"
+      - "python3.2m"
+      - "python3.2u"
+      - "python3.2"
+      - "python3.2dmu"
+      - "python3.2dm"
+      - "python3.2du"
+      - "python3.2d"
+      - "python3.1mu"
+      - "python3.1m"
+      - "python3.1u"
+      - "python3.1"
+      - "python3.1dmu"
+      - "python3.1dm"
+      - "python3.1du"
+      - "python3.1d"
+      - "python3.0mu"
+      - "python3.0m"
+      - "python3.0u"
+      - "python3.0"
+      - "python3.0dmu"
+      - "python3.0dm"
+      - "python3.0du"
+      - "python3.0d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/Scripts/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14mu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14m"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14u"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14dmu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14dm"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14du"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.14d"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13mu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13m"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13u"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13dmu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13dm"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13du"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.13d"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12mu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12m"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12u"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12dmu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12dm"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12du"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.12d"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11mu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11m"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11u"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11dmu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11dm"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11du"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.11d"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.10mu"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.10m"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.10u"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/bin/python3.10"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:3194 (find_library)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "library"
+    variable: "_Python_LIBRARY_RELEASE"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python310"
+      - "python3.10"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/lib/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/config-3.10-x86_64-linux-gnu/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/lib/libpython3.10.so"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:3709 (find_path)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "_Python_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Python.h"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/include/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/include/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/include/python3.10/"
+    searched_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/include/Python.h"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/Python.h"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/include/Python.h"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/Python.h"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/include/python3.10/"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:5 (find_package)"
+    name: "NumPy"
+    configs:
+      -
+        filename: "NumPyConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "numpy-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "NumPy"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/pkgRedirects/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/pkgRedirects/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/envs/gps_gaussian/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/envs/gps_gaussian/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/condabin/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/anaconda3/condabin/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/emscripten/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/emscripten/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/emscripten/cmake/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/emscripten/cmake/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/jvm/default/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/jvm/default/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/rustup/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/rustup/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/.local/share/JetBrains/Toolbox/scripts/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/.local/share/JetBrains/Toolbox/scripts/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/bin/shader-slang/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/bin/shader-slang/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/bin/shader-slang/cmake/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/revanj/bin/shader-slang/cmake/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/NumPyConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/numpy-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:4086 (find_path)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "_Python_NumPy_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "numpy/arrayobject.h"
+      - "numpy/numpyconfig.h"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:4086 (find_path)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "_Python_NumPy_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "numpy/arrayobject.h"
+      - "numpy/numpyconfig.h"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/torch/share/cmake"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:4086 (find_path)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "_Python_NumPy_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "numpy/arrayobject.h"
+      - "numpy/numpyconfig.h"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/torch/share/cmake"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython/Support.cmake:4086 (find_path)"
+      - "/home/revanj/anaconda3/envs/gps_gaussian/share/cmake-4.1/Modules/FindPython.cmake:706 (include)"
+      - "CMakeLists.txt:4 (find_package)"
+    mode: "path"
+    variable: "_Python_NumPy_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "numpy/arrayobject.h"
+      - "numpy/numpyconfig.h"
+    candidate_directories:
+      - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    found: "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/numpy/_core/include/"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/lib/python3.10/site-packages/torch/share/cmake"
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/home/revanj/anaconda3/envs/gps_gaussian/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin"
+        - "/home/revanj/anaconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/emscripten"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/revanj/.local/share/JetBrains/Toolbox/scripts"
+        - "/home/revanj/bin/shader-slang/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/home/revanj/anaconda3/envs/gps_gaussian/bin/../x86_64-conda-linux-gnu/sysroot/usr"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/home/revanj/anaconda3/envs/gps_gaussian"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...

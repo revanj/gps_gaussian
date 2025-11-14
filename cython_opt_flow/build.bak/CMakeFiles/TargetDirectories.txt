@@ -1,0 +1,3 @@
+/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/mymod.dir
+/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/edit_cache.dir
+/home/revanj/repos/avatar/test_cython_cmake/build/CMakeFiles/rebuild_cache.dir
