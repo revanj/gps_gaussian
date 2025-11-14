@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/revanj/repos/avatar/test_cython_cmake/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
