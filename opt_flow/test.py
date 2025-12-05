@@ -8,26 +8,20 @@ def read_image_rgba(filename):
 
     return rgba
 
-#
-# # Vector operations
-# a = np.random.rand(1000000).astype(np.float32)
-# b = np.random.rand(1000000).astype(np.float32)
-#
-# c = cuda_example.vector_add(a, b)
-# d = cuda_example.element_wise_multiply(a, b)
-#
-# # Matrix multiplication
-# A = np.random.rand(512, 1024).astype(np.float32)
-# B = np.random.rand(1024, 256).astype(np.float32)
-#
-# C = cuda_example.matrix_multiply(A, B)
-#
-# print(C)
+def opt_flow(first_image, second_image):
+    result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
+    cuda_example.opt_flow(first_image, second_image, result)
+    
+    # result is in S10.5
+    result = result.astype(np.float32) / 32.0
 
+    return result
+
+# first_image = read_image_rgba("002.jpg")
+# second_image = read_image_rgba("003.jpg")
 #
-# cuda_example.init()
-first_image = read_image_rgba("002.jpg")
-second_image = read_image_rgba("003.jpg")
-result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
-cuda_example.opt_flow(first_image, second_image, result)
-print(result)
+# print("type of first image is", first_image.shape, first_image.dtype)
+# 
+# result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
+# cuda_example.opt_flow(first_image, second_image, result)
+# print(result)

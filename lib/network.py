@@ -22,15 +22,15 @@ class RtStereoHumanModel(nn.Module):
         if self.with_gs_render:
             self.gs_parm_regresser = GSRegresser(self.cfg, rgb_dim=3, depth_dim=1)
 
-    def forward(self, data, is_train=True):
+    def forward(self, data, is_train=True, override_depth = None):
         bs = data['lmain']['img'].shape[0]
 
-        image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
+        # image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
         flow = torch.cat([data['lmain']['flow'], data['rmain']['flow']], dim=0) if is_train else None
         valid = torch.cat([data['lmain']['valid'], data['rmain']['valid']], dim=0) if is_train else None
 
-        with autocast(enabled=self.cfg.raft.mixed_precision):
-            img_feat = self.img_encoder(image)
+        # with autocast(enabled=self.cfg.raft.mixed_precision):
+        #     img_feat = self.img_encoder(image)
 
         if is_train:
             flow_predictions = self.raft_stereo(img_feat[2], iters=self.train_iters)
@@ -49,27 +49,33 @@ class RtStereoHumanModel(nn.Module):
             return data, flow_loss, metrics
 
         else:
-            flow_up = self.raft_stereo(img_feat[2], iters=self.val_iters, test_mode=True)
-            flow_loss, metrics = None, None
+            if override_depth != None:
+                data = self.flow2gsparms(image, img_feat, data, bs, override_depth)
+            else:
+                flow_up = self.raft_stereo(img_feat[2], iters=self.val_iters, test_mode=True)
+                flow_loss, metrics = None, None
 
-            data['lmain']['flow_pred'] = flow_up[0]
-            data['rmain']['flow_pred'] = flow_up[1]
+                data['lmain']['flow_pred'] = flow_up[0]
+                data['rmain']['flow_pred'] = flow_up[1]
 
-            if not self.with_gs_render:
-                return data, flow_loss, metrics
-            data = self.flow2gsparms(image, img_feat, data, bs)
+                data = self.flow2gsparms(image, img_feat, data, bs)
 
-            return data, flow_loss, metrics
+            return data
 
-    def flow2gsparms(self, lr_img, lr_img_feat, data, bs):
+    def flow2gsparms(self, lr_img, lr_img_feat, data, bs, override_depth=None):
         for view in ['lmain', 'rmain']:
-            data[view]['depth'] = flow2depth(data[view])
+            if override_depth != None:
+                data[view]['depth'] = override_depth[view]
+            else:
+                data[view]['depth'] = flow2depth(data[view])
+
             data[view]['xyz'] = depth2pc(data[view]['depth'], data[view]['extr'], data[view]['intr']).view(bs, -1, 3)
             valid = data[view]['depth'] != 0.0
             data[view]['pts_valid'] = valid.view(bs, -1)
 
-        # regress gaussian parms
+        # depth coming in is ([1, 1, 1024, 1024], [1, 1, 1024, 1024])
         lr_depth = torch.concat([data['lmain']['depth'], data['rmain']['depth']], dim=0)
+
         rot_maps, scale_maps, opacity_maps = self.gs_parm_regresser(lr_img, lr_depth, lr_img_feat)
 
         data['lmain']['rot_maps'], data['rmain']['rot_maps'] = torch.split(rot_maps, [bs, bs])

@@ -13,6 +13,9 @@ from lib.network import RtStereoHumanModel
 from config.stereo_human_config import ConfigStereoHuman as config
 from lib.utils import get_novel_calib
 from lib.GaussianRender import pts2render
+from torch.cuda.amp import autocast as autocast
+from opt_flow.test import opt_flow
+import cuda_example
 
 import torch
 import warnings
@@ -31,15 +34,80 @@ class StereoHumanRender:
             self.load_ckpt(self.cfg.restore_ckpt)
         self.model.eval()
 
+    def read_image_rgba(self, filename):
+        bgr_image = cv2.imread(filename)
+        rgba = cv2.cvtColor(bgr_image ,cv2.COLOR_BGR2RGBA)
+
+        return rgba
+
+    def opt_flow(self, first_image, second_image):
+        result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
+        cuda_example.opt_flow(first_image, second_image, result)
+        
+        # result is in S10.5
+        result = result.astype(np.float32) / 32.0
+
+        return result
+
+
     def infer_seqence(self, view_select, ratio=0.5):
+        first_image = self.read_image_rgba("002.jpg")
+        second_image = self.read_image_rgba("003.jpg")
+        
+        print("type of first image is", first_image.shape, first_image.dtype)
+        
+        result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
+        cuda_example.opt_flow(first_image, second_image, result)
+        print(result)
+
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
+        previous_frame_image_left = None
+        previous_frame_image_right = None
+        frame_data = None
         for idx in tqdm(range(total_frames)):
             item = self.dataset.get_test_item(idx, source_id=view_select)
             data = self.fetch_data(item)
             data = get_novel_calib(data, self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
             with torch.no_grad():
-                data, _, _ = self.model(data, is_train=False)
-                data = pts2render(data, bg_color=self.cfg.dataset.bg_color)
+                if idx % 2 == 0:
+                    print("generating depth")
+                    bs = data['lmain']['img'].shape[0]
+                    image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
+                    with autocast(enabled=self.cfg.raft.mixed_precision):
+                        img_feat = self.model.img_encoder(image)
+                    flow_up = self.model.raft_stereo(img_feat[2], iters=self.model.val_iters, test_mode=True)
+                    print("finished raft stereo")
+                    data['lmain']['flow_pred'] = flow_up[0]
+                    data['rmain']['flow_pred'] = flow_up[1]
+                    frame_data = self.model.flow2gsparms(image, img_feat, data, bs)
+                    print("finished flow2gsparams")
+                else:
+                    # mutate frame_data via cuda
+                    left_opt_flow = opt_flow(previous_frame_image_left, data['lmain']['img_original'])[:, :, 0]
+                    right_opt_flow = opt_flow(previous_frame_image_right, data['rmain']['img_original'])[:, :, 0]
+
+                    left_opt_flow = torch.from_numpy(left_opt_flow)[None, None, :, :].cuda()
+                    right_opt_flow = torch.from_numpy(right_opt_flow)[None, None, :, :].cuda()
+
+                    print("opt flow shape is", left_opt_flow.shape)
+
+                    frame_data = self.model.flow2gsparms(
+                        image, 
+                        img_feat, 
+                        data, bs, 
+                        override_depth = {
+                            'lmain': left_opt_flow, 
+                            'rmain': right_opt_flow
+                        }
+                    )
+
+                
+                print("starting pts render")
+                # data, _, _ = self.model(data, is_train=False)
+                data = pts2render(frame_data, bg_color=self.cfg.dataset.bg_color)
+                previous_frame_image_left = data['lmain']['img_original'];
+                previous_frame_image_right = data['rmain']['img_original'];
+
 
             render_novel = self.tensor2np(data['novel_view']['img_pred'])
             cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
@@ -53,6 +121,8 @@ class StereoHumanRender:
     def fetch_data(self, data):
         for view in ['lmain', 'rmain']:
             for item in data[view].keys():
+                if item == 'img_original':
+                    continue
                 data[view][item] = data[view][item].cuda().unsqueeze(0)
         return data
 
