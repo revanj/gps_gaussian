@@ -15,7 +15,9 @@ from lib.utils import get_novel_calib
 from lib.GaussianRender import pts2render
 from torch.cuda.amp import autocast as autocast
 from opt_flow.test import opt_flow
+from lib.utils import flow2depth
 import cuda_example
+import matplotlib.pyplot as plt
 
 import torch
 import warnings
@@ -51,19 +53,13 @@ class StereoHumanRender:
 
 
     def infer_seqence(self, view_select, ratio=0.5):
-        first_image = self.read_image_rgba("002.jpg")
-        second_image = self.read_image_rgba("003.jpg")
-        
-        print("type of first image is", first_image.shape, first_image.dtype)
-        
-        result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
-        cuda_example.opt_flow(first_image, second_image, result)
-        print(result)
-
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         previous_frame_image_left = None
         previous_frame_image_right = None
         frame_data = None
+        frame_depth_left = None
+        frame_depth_right = None
+
         for idx in tqdm(range(total_frames)):
             item = self.dataset.get_test_item(idx, source_id=view_select)
             data = self.fetch_data(item)
@@ -80,16 +76,32 @@ class StereoHumanRender:
                     data['lmain']['flow_pred'] = flow_up[0]
                     data['rmain']['flow_pred'] = flow_up[1]
                     frame_data = self.model.flow2gsparms(image, img_feat, data, bs)
+                    frame_depth_left = frame_data['lmain']['depth']
+                    frame_depth_right = frame_data['rmain']['depth']
                     print("finished flow2gsparams")
                 else:
                     # mutate frame_data via cuda
-                    left_opt_flow = opt_flow(previous_frame_image_left, data['lmain']['img_original'])[:, :, 0]
-                    right_opt_flow = opt_flow(previous_frame_image_right, data['rmain']['img_original'])[:, :, 0]
+                    left_opt_flow = opt_flow(previous_frame_image_left, data['lmain']['img_original'])
+                    right_opt_flow = opt_flow(previous_frame_image_right, data['rmain']['img_original'])
 
-                    left_opt_flow = torch.from_numpy(left_opt_flow)[None, None, :, :].cuda()
-                    right_opt_flow = torch.from_numpy(right_opt_flow)[None, None, :, :].cuda()
+                    left_opt_flow = torch.from_numpy(left_opt_flow) # [None, None, :, :].cuda()
+                    right_opt_flow = torch.from_numpy(right_opt_flow) # [None, None, :, :].cuda()
+                    
+                    new_depth_l = torch.zeros_like(frame_depth_right)
+                    new_depth_r = torch.zeros_like(frame_depth_right)
 
-                    print("opt flow shape is", left_opt_flow.shape)
+                    # for i in range(1024):
+                    #     for j in range(1024):
+                    #         left_flow_x = int(left_opt_flow[i, j, 0])
+                    #         left_flow_y = int(left_opt_flow[i, j, 1])
+
+                    #         right_flow_x = int(right_opt_flow[i, j, 0])
+                    #         right_flow_y = int(right_opt_flow[i, j, 1])
+
+                    #         if 0 <= (i + left_flow_x) and (i + left_flow_x) < 1024 and 0 <= j + left_flow_y and j + left_flow_y < 1024:
+                    #             new_depth_l[i, j, :] = frame_depth_left[i + left_flow_x, j + left_flow_y]
+
+
 
                     frame_data = self.model.flow2gsparms(
                         image, 
