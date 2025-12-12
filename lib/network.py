@@ -25,12 +25,12 @@ class RtStereoHumanModel(nn.Module):
     def forward(self, data, is_train=True, override_depth = None):
         bs = data['lmain']['img'].shape[0]
 
-        # image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
+        image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
         flow = torch.cat([data['lmain']['flow'], data['rmain']['flow']], dim=0) if is_train else None
         valid = torch.cat([data['lmain']['valid'], data['rmain']['valid']], dim=0) if is_train else None
 
-        # with autocast(enabled=self.cfg.raft.mixed_precision):
-        #     img_feat = self.img_encoder(image)
+        with autocast(enabled=self.cfg.raft.mixed_precision):
+            img_feat = self.img_encoder(image)
 
         if is_train:
             flow_predictions = self.raft_stereo(img_feat[2], iters=self.train_iters)

@@ -90,16 +90,20 @@ class StereoHumanRender:
                     new_depth_l = torch.zeros_like(frame_depth_right)
                     new_depth_r = torch.zeros_like(frame_depth_right)
 
-                    # for i in range(1024):
-                    #     for j in range(1024):
-                    #         left_flow_x = int(left_opt_flow[i, j, 0])
-                    #         left_flow_y = int(left_opt_flow[i, j, 1])
 
-                    #         right_flow_x = int(right_opt_flow[i, j, 0])
-                    #         right_flow_y = int(right_opt_flow[i, j, 1])
+                    for i in range(1024):
+                        for j in range(1024):
+                            left_flow_x = int(left_opt_flow[i, j, 1])
+                            left_flow_y = int(left_opt_flow[i, j, 0])
 
-                    #         if 0 <= (i + left_flow_x) and (i + left_flow_x) < 1024 and 0 <= j + left_flow_y and j + left_flow_y < 1024:
-                    #             new_depth_l[i, j, :] = frame_depth_left[i + left_flow_x, j + left_flow_y]
+                            right_flow_x = int(right_opt_flow[i, j, 1])
+                            right_flow_y = int(right_opt_flow[i, j, 0])
+
+                            if 0 <= (i - left_flow_x) and (i - left_flow_x) < 1024 and 0 <= j - left_flow_y and j - left_flow_y < 1024:
+                                new_depth_l[:, :, i, j] = frame_depth_left[:, :, i - left_flow_x, j - left_flow_y]
+
+                            if 0 <= (i - right_flow_x) and (i - right_flow_x) < 1024 and 0 <= j - right_flow_y and j - right_flow_y < 1024:
+                                new_depth_r[:, :, i, j] = frame_depth_right[:, :, i - right_flow_x, j - right_flow_y]
 
 
 
@@ -108,8 +112,8 @@ class StereoHumanRender:
                         img_feat, 
                         data, bs, 
                         override_depth = {
-                            'lmain': left_opt_flow, 
-                            'rmain': right_opt_flow
+                            'lmain': new_depth_l, 
+                            'rmain': new_depth_r, 
                         }
                     )
 
