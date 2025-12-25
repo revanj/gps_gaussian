@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 from tqdm import tqdm
 
+from lib import utils
 from lib.human_loader import StereoHumanDataset
 from lib.network import RtStereoHumanModel
 from config.stereo_human_config import ConfigStereoHuman as config
@@ -19,8 +20,16 @@ from lib.utils import flow2depth
 import cuda_example
 import matplotlib.pyplot as plt
 
+from lib.loss import ssim, psnr
+
 import torch
 import warnings
+
+import torch.nn.functional as F
+from skimage.metrics import peak_signal_noise_ratio
+from skimage.metrics import  structural_similarity as ssim
+import time
+
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
@@ -56,77 +65,174 @@ class StereoHumanRender:
         total_frames = len(os.listdir(os.path.join(self.cfg.dataset.test_data_root, 'img')))
         previous_frame_image_left = None
         previous_frame_image_right = None
-        frame_data = None
         frame_depth_left = None
         frame_depth_right = None
+        previous_gt = None
+        psnr_values = [] 
 
         for idx in tqdm(range(total_frames)):
             item = self.dataset.get_test_item(idx, source_id=view_select)
             data = self.fetch_data(item)
             data = get_novel_calib(data, self.cfg.dataset, ratio=ratio, intr_key='intr_ori', extr_key='extr_ori')
+
             with torch.no_grad():
-                if idx % 2 == 0:
-                    print("generating depth")
-                    bs = data['lmain']['img'].shape[0]
-                    image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
-                    with autocast(enabled=self.cfg.raft.mixed_precision):
-                        img_feat = self.model.img_encoder(image)
-                    flow_up = self.model.raft_stereo(img_feat[2], iters=self.model.val_iters, test_mode=True)
-                    print("finished raft stereo")
-                    data['lmain']['flow_pred'] = flow_up[0]
-                    data['rmain']['flow_pred'] = flow_up[1]
-                    frame_data = self.model.flow2gsparms(image, img_feat, data, bs)
-                    frame_depth_left = frame_data['lmain']['depth']
-                    frame_depth_right = frame_data['rmain']['depth']
-                    print("finished flow2gsparams")
-                else:
-                    # mutate frame_data via cuda
-                    left_opt_flow = opt_flow(previous_frame_image_left, data['lmain']['img_original'])
-                    right_opt_flow = opt_flow(previous_frame_image_right, data['rmain']['img_original'])
+                bs = data['lmain']['img'].shape[0]
+                image = torch.cat([data['lmain']['img'], data['rmain']['img']], dim=0)
+                with autocast(enabled=self.cfg.raft.mixed_precision):
+                    img_feat = self.model.img_encoder(image)
+                flow_up = self.model.raft_stereo(img_feat[2], iters=self.model.val_iters, test_mode=True)
+                data['lmain']['flow_pred'] = flow_up[0]
+                data['rmain']['flow_pred'] = flow_up[1]
+                gt_frame_data = self.model.flow2gsparms(image, img_feat, data, bs)
+                gt_data = pts2render(gt_frame_data, bg_color=self.cfg.dataset.bg_color)
+                gt = self.tensor2np(gt_data['novel_view']['img_pred']) 
+                gt_shifted = np.zeros_like(gt)
+                gt_shifted[:, 1: 2048, :] = gt[:, :2047, :]
 
-                    left_opt_flow = torch.from_numpy(left_opt_flow) # [None, None, :, :].cuda()
-                    right_opt_flow = torch.from_numpy(right_opt_flow) # [None, None, :, :].cuda()
+                print("shifted_psnr is", self.calculate_psnr(gt_shifted, gt))
+
+                
+                # if previous_gt is not None:
+                #     fig, axes = plt.subplots(1, 3, figsize=(12, 5))
+                #     axes[0].imshow(previous_gt)
+                #     axes[0].set_title('previous_gt', fontsize=14, fontweight='bold')
+                #     axes[0].axis('off')  # Hide axes
+            
+                #     # # Display second image
+                #     axes[1].imshow(gt)
+                #     axes[1].set_title('GT', fontsize=14, fontweight='bold')
+                #     axes[1].axis('off')  # Hide axes
+
+                #     axes[2].imshow(np.abs(gt - previous_gt))
+                #     axes[2].set_title('diff', fontsize=14, fontweight='bold')
+                #     axes[2].axis('off')  # Hide axes
+
+                #     plt.show()
+                #     print("gt comparison is", self.calculate_psnr(previous_gt, gt))
                     
-                    new_depth_l = torch.zeros_like(frame_depth_right)
-                    new_depth_r = torch.zeros_like(frame_depth_right)
 
+                # previous_gt = gt
 
-                    for i in range(1024):
-                        for j in range(1024):
-                            left_flow_x = int(left_opt_flow[i, j, 1])
-                            left_flow_y = int(left_opt_flow[i, j, 0])
+                if idx % 2 == 0:
+                    frame_depth_left = gt_frame_data['lmain']['depth']
+                    frame_depth_right = gt_frame_data['rmain']['depth']
+                else:
+                    start = time.time() 
+                    left_opt_flow = opt_flow(data['lmain']['img_original'], previous_frame_image_left)
+                    right_opt_flow = opt_flow(data['rmain']['img_original'], previous_frame_image_right)
+                    finished_opt = time.time() - start
+                    print("after opt time is", finished_opt)
 
-                            right_flow_x = int(right_opt_flow[i, j, 1])
-                            right_flow_y = int(right_opt_flow[i, j, 0])
+                    left_opt_flow = torch.from_numpy(left_opt_flow).cuda() # [None, None, :, :].cuda()
+                    right_opt_flow = torch.from_numpy(right_opt_flow).cuda() # [None, None, :, :].cuda()
 
-                            if 0 <= (i - left_flow_x) and (i - left_flow_x) < 1024 and 0 <= j - left_flow_y and j - left_flow_y < 1024:
-                                new_depth_l[:, :, i, j] = frame_depth_left[:, :, i - left_flow_x, j - left_flow_y]
+                    finished_opt = time.time() - start
+                    print("finished_np time is", finished_opt)
+                    
+                    y_grid_l, x_grid_l = torch.meshgrid(
+                        torch.arange(1024, device=left_opt_flow.device, dtype=torch.float32).cuda(),
+                        torch.arange(1024, device=left_opt_flow.device, dtype=torch.float32).cuda(),
+                        indexing='ij'
+                    )
 
-                            if 0 <= (i - right_flow_x) and (i - right_flow_x) < 1024 and 0 <= j - right_flow_y and j - right_flow_y < 1024:
-                                new_depth_r[:, :, i, j] = frame_depth_right[:, :, i - right_flow_x, j - right_flow_y]
+                    x_grid_l = x_grid_l + left_opt_flow[:, :, 0]
+                    y_grid_l = y_grid_l + left_opt_flow[:, :, 1]
 
+                    x_normalized_l = 2.0 * x_grid_l / (1024 - 1) - 1.0
+                    y_normalized_l = 2.0 * y_grid_l / (1024 - 1) - 1.0
 
+                    grid_l = torch.stack([x_normalized_l, y_normalized_l], dim=-1).unsqueeze(0).type(torch.float32).cuda()
+                    
+                    warped_l = F.grid_sample(
+                        frame_depth_left,
+                        grid_l, 
+                        mode='bilinear', 
+                        padding_mode='zeros',
+                    ).cuda()
+
+                    finished_opt = time.time() - start
+                    print("setup warpping", finished_opt)
+
+                    y_grid_r, x_grid_r = torch.meshgrid(
+                        torch.arange(1024, device=image.device, dtype=float).cuda(),
+                        torch.arange(1024, device=image.device, dtype=float).cuda(),
+                        indexing='ij'
+                    )
+
+                    x_grid_r = x_grid_r + right_opt_flow[:, :, 0]
+                    y_grid_r = y_grid_r + right_opt_flow[:, :, 1]
+                    x_normalized_r = 2.0 * x_grid_r / (1024 - 1) - 1.0
+                    y_normalized_r = 2.0 * y_grid_r / (1024 - 1) - 1.0
+
+                    grid_r = torch.stack([x_normalized_r, y_normalized_r], dim=-1).unsqueeze(0).type(torch.float32).cuda()
+                    
+                    warped_r = F.grid_sample(
+                        frame_depth_right,
+                        grid_r, 
+                        mode='bilinear', 
+                        padding_mode='zeros',
+                        align_corners=True
+                    )
+                    finished_opt = time.time() - start
+                    print("finished_warping", finished_opt)
 
                     frame_data = self.model.flow2gsparms(
                         image, 
                         img_feat, 
                         data, bs, 
                         override_depth = {
-                            'lmain': new_depth_l, 
-                            'rmain': new_depth_r, 
+                            'lmain': warped_l,
+                            'rmain': warped_r, 
                         }
                     )
+                    data = pts2render(frame_data, bg_color=self.cfg.dataset.bg_color)
+                    
+                previous_frame_image_left = data['lmain']['img_original']
+                previous_frame_image_right = data['rmain']['img_original']
 
-                
-                print("starting pts render")
-                # data, _, _ = self.model(data, is_train=False)
-                data = pts2render(frame_data, bg_color=self.cfg.dataset.bg_color)
-                previous_frame_image_left = data['lmain']['img_original'];
-                previous_frame_image_right = data['rmain']['img_original'];
+                render_novel = self.tensor2np(data['novel_view']['img_pred'])
+                if idx % 2 != 0:
+                    psnr_val = ssim(render_novel, gt)
+                    print("PSNR is", psnr_val)
+                    psnr_values.append(psnr_val)
+                    # fig, axes = plt.subplots(1, 3, figsize=(12, 5))
+                    # axes[0].imshow(render_novel)
+                    # axes[0].set_title('First Image', fontsize=14, fontweight='bold')
+                    # axes[0].axis('off')  # Hide axes
+            
+                    # # # Display second image
+                    # axes[1].imshow(gt)
+                    # axes[1].set_title('GT', fontsize=14, fontweight='bold')
+                    # axes[1].axis('off')  # Hide axes
+
+        counts, bin_edges = np.histogram(np.array(psnr_values), bins=50)
+        cdf = np.cumsum(counts) / np.sum(counts)
+        plt.figure(figsize=(12, 5))
+        
+        # Plot 1: CDF from histogram
+        plt.subplot(1, 2, 1)
+        plt.plot(bin_edges[1:], cdf, linewidth=2, color='blue')
+        plt.xlabel('Value')
+        plt.ylabel('Cumulative Probability')
+        plt.title('CDF using np.histogram')
+        plt.grid(True, alpha=0.3)
+        print("average PSNR is", sum(psnr_values)/len(psnr_values))
+        plt.show()
 
 
-            render_novel = self.tensor2np(data['novel_view']['img_pred'])
-            cv2.imwrite(self.cfg.test_out_path + '/%s_novel.jpg' % (data['name']), render_novel)
+
+    def calculate_psnr(self, img1, img2):
+        mse = np.mean((img1 - img2) ** 2)
+        
+        if mse == 0:
+            return float('inf')
+        
+        max_pixel = max(np.max(img1), np.max(img2))
+        print("max pixel is", max_pixel)
+        import math
+        psnr = 10 * math.log10(max_pixel**2 / mse)
+        return psnr
+    
 
     def tensor2np(self, img_tensor):
         img_np = img_tensor.permute(0, 2, 3, 1)[0].detach().cpu().numpy()

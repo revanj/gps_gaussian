@@ -10,8 +10,8 @@ def read_image_rgba(filename):
 
 def opt_flow(first_image, second_image):
     result = np.zeros((first_image.shape[0], first_image.shape[1], 2), dtype=np.uint16)
-    cuda_example.opt_flow(first_image, second_image, result)
 
+    cuda_example.opt_flow(first_image, second_image, result)
     # result is in S10.5
     result = result.astype(np.int16).astype(np.float32) / 32.0
 

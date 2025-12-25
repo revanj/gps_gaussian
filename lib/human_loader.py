@@ -321,6 +321,7 @@ class StereoHumanDataset(Dataset):
         for (img_view, mask_view) in [('img0', 'mask0'), ('img1', 'mask1')]:
             img_original = stereo_data[img_view]
             img_original_extend = np.append(img_original, np.zeros_like(img_original[:, :, :1]), axis=-1)
+            img_original_extend[:, :, 3] = 255
             img = torch.from_numpy(np.copy(img_original)).permute(2, 0, 1)
             img = 2 * (img / 255.0) - 1.0
             mask = torch.from_numpy(stereo_data[mask_view]).permute(2, 0, 1).float()
